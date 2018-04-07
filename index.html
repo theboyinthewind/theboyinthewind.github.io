@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>王境泽图片生成器js版</title>
+    <script src="https://cdn.bootcss.com/pixi.js/5.0.0-alpha/pixi.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/gif.js/0.2.0/gif.js"></script>
+    <style type="text/css" media="screen">
+    .wjzTextInput {
+        width: 400px;
+        height: 40px;
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    #wjzContentHolder {
+        float: left;
+    }
+
+    #launchButton {
+        margin-top: 20px;
+        padding-top: 10px;
+        width: 100px;
+        height: 30px;
+        border: 1px solid black;
+        /*align-items: center;*/
+        cursor: pointer;
+    }
+
+    #launchButton:hover {
+        background-color: #d1e6ff;
+    }
+
+    #output {
+        margin-top: 20px;
+    }
+
+    #introduce,
+    #TipCanvas {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="introduce">
+            本页面可以生成王境泽真香的gif,注意上面的动画是实时预览,并非可保存的图片
+            <br> 更改文字内容后,请等上方图片至少播放一轮后,再点击生成图片按钮,以保证内容正确
+            <br>由于作者比较菜,js也不是啥好语言,所以有时会有生成的图片第一帧是全黑的情况(不知为啥)
+            <br> 由于作者比较穷,所以页面加载会比较慢,不过缓存一次后啥都好说(
+            <br>源码仓库: <a href="https://coding.net/u/hhhhhg/p/wjzGif-JavaScript/git">coding.net/u/hhhhhg/p/wjzGif-JavaScript/git</a>
+            <br>
+            <br>
+        </div>
+        <div id="canvas">
+        </div>
+        <div id="wjzAPP">
+            <div id="TipCanvas">此处动画为实时预览,生成gif请点击下面的生成图片按钮</div>
+            <div id="loaderProgressdiv">
+                素材正在加载中{{loadProgress >> 0}}%
+            </div>
+            <br>
+            <input class="wjzTextInput" placeholder="我王境泽就是饿死" type="text" v-model="input0">
+            <br>
+            <input class="wjzTextInput" placeholder="死外边,从这跳下去" type="text" v-model="input1">
+            <br>
+            <input class="wjzTextInput" placeholder="我也不会吃你们一点东西" type="text" v-model="input2">
+            <br>
+            <input class="wjzTextInput" placeholder="真香" type="text" v-model="input3">
+            <br>
+            <div id="launchButton" onclick="makeGif()">生成图片</div>
+            <img id='output'>
+            <div id="TipGif">点击生成的图片将会在此显示</div>
+        </div>
+        <!-- Vue.js部分 -->
+        <script type="text/javascript">
+        var wjzapp = new Vue({
+            el: '#wjzAPP',
+            data: {
+                input0: '',
+                input1: '',
+                input2: '',
+                input3: '',
+                loadProgress: 0
+            }
+        })
+        </script>
+        <!-- PIXI.js部分 -->
+        <script type="text/javascript">
+        let app = new PIXI.Application({
+            width: 300,
+            height: 184,
+            antialias: true,
+            transparent: false,
+            resolution: 1
+        });
+
+        for (loaderNum = 0; loaderNum <= 55; loaderNum++) {
+            if (loaderNum <= 9) {
+                LoaderPicPath = "wjz/wjz0" + loaderNum + ".jpg"
+            } else {
+                LoaderPicPath = "wjz/wjz" + loaderNum + ".jpg"
+            }
+            PIXI.loader.add(LoaderPicPath)
+        }
+        PIXI.loader
+            .on("progress", loadProgressHandler)
+            .load(setup);
+
+        var loop = true;
+        let cGif;
+        var cGifGroup = new Array()
+        var c;
+        var textStyle;
+        let message;
+        var imgArray = new Array()
+
+        textStyle = new PIXI.TextStyle({
+            fontSize: 20,
+            fill: "white",
+            stroke: 'black',
+            strokeThickness: 2,
+            wordWrap: true,
+            wordWrapWidth: 280,
+        });
+        message = new PIXI.Text(" ", textStyle);
+        message.anchor.set(0.5, 0.5);
+        message.position.set(150, 163);
+
+        function setup() {
+            document.getElementById('introduce').style.display = 'block';
+            document.getElementById('TipCanvas').style.display = 'block';
+            document.getElementById("loaderProgressdiv").parentNode.removeChild(document.getElementById('loaderProgressdiv'));
+            document.getElementById("canvas").appendChild(app.view);
+            var stage = new PIXI.Container();
+            for (cGifPoint = 0; cGifPoint <= 55; cGifPoint++) {
+                if (cGifPoint <= 9) {
+                    picPath = "wjz/wjz0" + cGifPoint + ".jpg"
+                } else {
+                    picPath = "wjz/wjz" + cGifPoint + ".jpg"
+                }
+                cGifGroup[cGifPoint] = new PIXI.Sprite(PIXI.loader.resources[picPath].texture);
+                cGifGroup[cGifPoint].rotation = 4
+                app.stage.addChild(cGifGroup[cGifPoint]);
+            }
+
+            c = document.querySelector("canvas");
+            gameLoop();
+
+            app.stage.addChild(message);
+        }
+
+        var Timer = 0;
+        var picNum;
+        var wjzText = ''
+
+        function drawPic() {
+            picPath = "wjz/wjz" + picNum + ".jpg"
+            if (picNum === 0) {
+                lastPicNum = 55;
+            } else {
+                lastPicNum = picNum - 1
+            }
+            cGifGroup[lastPicNum].rotation = 4;
+            cGifGroup[picNum].rotation = 0;
+        }
+
+        function gameLoop() {
+            if (loop === true) {
+                picNum = Timer % 56;
+                Timer += 1;
+                drawPic()
+                setTimeout(gameLoop, 125)
+                drawText()
+            }
+        }
+
+        function drawText() {
+            if (picNum >= 0 && picNum <= 12)
+                wjzText = wjzapp.input0;
+            else if (picNum >= 15 && picNum <= 26)
+                wjzText = wjzapp.input1;
+            else if (picNum >= 29 && picNum <= 39)
+                wjzText = wjzapp.input2;
+            else if (picNum >= 41 && picNum <= 52)
+                wjzText = wjzapp.input3;
+            else
+                wjzText = ''
+            message.text = wjzText;
+            app.stage.addChild(message);
+            app.renderer.render(app.stage);
+            var imageData = app.view.toDataURL("image/png")
+            imgArray[picNum] = imageData;
+        }
+
+        function loadProgressHandler(loader, resource) {
+            wjzapp.loadProgress = loader.progress;
+        }
+        </script>
+        <!-- gif.js部分 -->
+        <script type="text/javascript">
+        var canOutput = true
+
+        function makeGif() {
+            document.getElementById('TipGif').innerHTML = '正在生成gif...';
+            document.getElementById('output').src = ' ';
+            var gif = new GIF({
+                workers: 2,
+                quality: 1,
+                width: 300,
+                height: 184
+            });
+            for (huanggua = 0; huanggua <= 55; huanggua++) {
+                if (imgArray[huanggua] === undefined) {
+                    alert('请等待上方图片播放至少一遍后再点击生成图片')
+                    canOutput = false
+                    document.getElementById('TipGif').innerHTML = '点击生成的图片将会在此显示';
+                    break
+                } else {
+
+                    var imghg = new Image()
+                    imghg.src = imgArray[huanggua]
+                    gif.addFrame(imghg, { delay: 125 });
+                    canOutput = true
+                }
+            }
+            gif.on('finished', function(blob) {
+                if (canOutput == true)
+                    document.getElementById('TipGif').innerHTML = '右键另存为这个图片即可';
+                document.getElementById('output').src = URL.createObjectURL(blob);
+            });
+            gif.render();
+        }
+        </script>
+    </center>
+</body>
+
+</html>
