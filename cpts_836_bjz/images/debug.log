@@ -40,3 +40,46 @@
 [0428/231257:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
 [0428/231258:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
 [0428/231259:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232537:ERROR:renderer_main.cc(203)] Running without renderer sandbox
+[0428/232538:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232538:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232538:INFO:CONSOLE(1)] "
+          _____                    _____                    _____                    _____          
+         /\    \                  /\    \                  /\    \                  /\    \         
+        /::\____\                /::\    \                /::\    \                /::\    \        
+       /:::/    /                \:::\    \              /::::\    \              /::::\    \       
+      /:::/    /                  \:::\    \            /::::::\    \            /::::::\    \      
+     /:::/    /                    \:::\    \          /:::/\:::\    \          /:::/\:::\    \     
+    /:::/____/                      \:::\    \        /:::/__\:::\    \        /:::/__\:::\    \    
+   /::::\    \                      /::::\    \      /::::\   \:::\    \      /::::\   \:::\    \   
+  /::::::\    \   _____    ____    /::::::\    \    /::::::\   \:::\    \    /::::::\   \:::\    \  
+ /:::/\:::\    \ /\    \  /\   \  /:::/\:::\    \  /:::/\:::\   \:::\____\  /:::/\:::\   \:::\    \ 
+/:::/  \:::\    /::\____\/::\   \/:::/  \:::\____\/:::/  \:::\   \:::|    |/:::/__\:::\   \:::\____\
+\::/    \:::\  /:::/    /\:::\  /:::/    \::/    /\::/   |::::\  /:::|____|\:::\   \:::\   \::/    /
+ \/____/ \:::\/:::/    /  \:::\/:::/    / \/____/  \/____|:::::\/:::/    /  \:::\   \:::\   \/____/ 
+          \::::::/    /    \::::::/    /                 |:::::::::/    /    \:::\   \:::\    \     
+           \::::/    /      \::::/____/                  |::|\::::/    /      \:::\   \:::\____\    
+           /:::/    /        \:::\    \                  |::| \::/____/        \:::\   \::/    /    
+          /:::/    /          \:::\    \                 |::|  ~|               \:::\   \/____/     
+         /:::/    /            \:::\    \                |::|   |                \:::\    \         
+        /:::/    /              \:::\____\               \::|   |                 \:::\____\        
+        \::/    /                \::/    /                \:|   |                  \::/    /        
+         \/____/                  \/____/                  \|___|                   \/____/         
+
+知乎(zhihu.com)，招聘前端开发工程师 http://zhi.hu/BDXoD
+    ", source: https://static.zhihu.com/heifetz/main.app.a0ba6e31bc8b721b5b16.js (1)
+[0428/232539:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232539:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232539:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232540:INFO:CONSOLE(2)] "[zplayer] Use hls.js: %o (%o)", source: https://unpkg.zhimg.com/raven-js@3.17.0/dist/raven.min.js (2)
+[0428/232543:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232544:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232544:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232545:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232546:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232546:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232547:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232547:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232548:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232551:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/232551:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
