@@ -1,0 +1,42 @@
+[0428/231247:ERROR:renderer_main.cc(203)] Running without renderer sandbox
+[0428/231248:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231249:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231250:INFO:CONSOLE(1)] "
+          _____                    _____                    _____                    _____          
+         /\    \                  /\    \                  /\    \                  /\    \         
+        /::\____\                /::\    \                /::\    \                /::\    \        
+       /:::/    /                \:::\    \              /::::\    \              /::::\    \       
+      /:::/    /                  \:::\    \            /::::::\    \            /::::::\    \      
+     /:::/    /                    \:::\    \          /:::/\:::\    \          /:::/\:::\    \     
+    /:::/____/                      \:::\    \        /:::/__\:::\    \        /:::/__\:::\    \    
+   /::::\    \                      /::::\    \      /::::\   \:::\    \      /::::\   \:::\    \   
+  /::::::\    \   _____    ____    /::::::\    \    /::::::\   \:::\    \    /::::::\   \:::\    \  
+ /:::/\:::\    \ /\    \  /\   \  /:::/\:::\    \  /:::/\:::\   \:::\____\  /:::/\:::\   \:::\    \ 
+/:::/  \:::\    /::\____\/::\   \/:::/  \:::\____\/:::/  \:::\   \:::|    |/:::/__\:::\   \:::\____\
+\::/    \:::\  /:::/    /\:::\  /:::/    \::/    /\::/   |::::\  /:::|____|\:::\   \:::\   \::/    /
+ \/____/ \:::\/:::/    /  \:::\/:::/    / \/____/  \/____|:::::\/:::/    /  \:::\   \:::\   \/____/ 
+          \::::::/    /    \::::::/    /                 |:::::::::/    /    \:::\   \:::\    \     
+           \::::/    /      \::::/____/                  |::|\::::/    /      \:::\   \:::\____\    
+           /:::/    /        \:::\    \                  |::| \::/____/        \:::\   \::/    /    
+          /:::/    /          \:::\    \                 |::|  ~|               \:::\   \/____/     
+         /:::/    /            \:::\    \                |::|   |                \:::\    \         
+        /:::/    /              \:::\____\               \::|   |                 \:::\____\        
+        \::/    /                \::/    /                \:|   |                  \::/    /        
+         \/____/                  \/____/                  \|___|                   \/____/         
+
+知乎(zhihu.com)，招聘前端开发工程师 http://zhi.hu/BDXoD
+    ", source: https://static.zhihu.com/heifetz/main.raven.8ca8759ecebee4934c8e.js (1)
+[0428/231250:INFO:CONSOLE(2)] "[zplayer] Use hls.js: %o (%o)", source: https://unpkg.zhimg.com/raven-js@3.17.0/dist/raven.min.js (2)
+[0428/231251:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231251:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231251:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231253:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231253:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231254:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231255:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231256:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231256:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231256:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231257:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231258:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[0428/231259:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
